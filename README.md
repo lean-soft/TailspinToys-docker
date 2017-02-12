@@ -10,4 +10,4 @@
 
 请关注微信公众号 【devopshub】，获取更多关于DevOps研发运维一体化的信息
 
-![alt text](./images/qrcode_for_gh_b7c158df1fd1_430-300x300.png)
+![alt text](./images/qrcode_for_gh_b7c158df1fd1_430-300x300.jpg)
