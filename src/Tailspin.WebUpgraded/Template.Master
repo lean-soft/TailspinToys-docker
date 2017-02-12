@@ -1,0 +1,72 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Home - Tailspin Toys</title>
+	<link rel="SHORTCUT ICON" href="favicon.ico"/>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <asp:ContentPlaceHolder runat="server" id="metas">   
+    </asp:ContentPlaceHolder>
+  	<meta http-equiv="Content-language" content="en" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+  	<link media="screen, projection" type="text/css" href="/CSS/styles.css" rel="stylesheet"/>
+  	<link media="print" type="text/css" href="/CSS/print.css" rel="stylesheet"/>
+	<!--[if lt IE 7]>
+  	<link media="screen, projection" type="text/css" href="CSS/ieStyles.css" rel="stylesheet"/>
+	<![endif]-->
+	<script type="text/javascript" src="/Scripts/cufon-yui.js"></script>
+	<script type="text/javascript" src="/Scripts/Stencil_Std_700.font.js"></script>
+    <script type="text/javascript">
+        Cufon.replace('h1.section-header');
+    </script>
+</head>
+
+<body>
+    <div class="background-right">
+    </div><!--end background-right-->
+    <div class="master">
+    	<div class="wrapper">
+        	<div class="logo"><a href="/"><img src="/Images/trans.png" /></a></div><!--end logo-->
+        	<div class="header">
+            	<div class="shopping-cart">
+                	<a class="view" href="<%=Url.Action("Show","Cart")%>" title="View all items in your shopping cart"><%=this.CurrentCart().Items.Sum(x=>x.Quantity)%> items in your cart</a>
+                    <a class="checkout" title="Proceed to checkout" href="<%=Url.Action("Checkout","Order")%>">Checkout</a>
+                    <div class="clear"></div><!--end clear-->
+                </div><!--end shopping-cart-->
+                <!--Top Navigation-->
+                <div>
+                    <% Html.RenderAction("ProductCategoryMenu", "Products"); %>
+                </div>
+                <div class="clear"></div><!--end clear-->
+            </div><!--end header-->
+ 
+
+
+    <div class="content">
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+
+    <ul class="product-categories">
+            	<li><a class="new-planes" href="#" title="Browse all new planes">New Planes</a></li>
+                <li><a class="rockets" href="#" title="Browse all rockets">Rockets</a></li>
+                <li><a class="helicopters" href="#" title="Browse all helicopters">Helicopters</a></li>
+                <li class="last"><a class="rc-planes" href="#" title="Browse all R/C planes">R/C Planes</a></li>
+            </ul><!--end product-categories-->
+            <div class="clear"></div><!--end clear-->
+            <ul class="footer">
+                <li class="about"><%=Html.ActionLink("About Us","About","Home")%></li>
+                <li class="careers"><a href="#">Careers</a></li>
+                <li class="investors"><a href="#">Investor Relations</a></li>
+                <li class="store"><a href="#">Store Locations</a></li>
+                <li class="order"><a href="#">Order Status</a></li>
+                <li class="returns"><a href="#">Returns &amp; Exchanges</a></li>
+                <li class="shipping"><a href="#">Shipping Options &amp; Charges</a></li>
+            </ul><!--end footer-->
+            <div class="clear"></div><!--end clear-->
+        </div><!--end wrapper-->
+    </div><!--end master-->
+</body>
+</html>

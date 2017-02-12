@@ -1,0 +1,10 @@
+/* =IE6 STYLES
+   ....................................... */
+   
+div.header div.top-menu ul#menulist li#model a {
+	zoom: 1;
+	margin-right: 3px;
+}
+div.header div.top-menu {
+	padding-top: 6px;
+}

@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="71722790-c434-4bf8-b875-e75b96b755ea" name="Tailspin.Models" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment Id="9f353103-a2c4-4a74-bab5-36888b55b458">
+      <body>Simplification to point out access methods.</body>
+      <annotatedElements>
+        <providedInterfaceMoniker Id="5ef84056-1ee1-41e8-9077-a0d661373c0f" LastKnownName="Port2" LastKnownLocation="Tailspin.Models.uml" />
+        <providedInterfaceMoniker Id="4a05cf4a-e054-44ad-950d-6a40f611689c" LastKnownName="Port1" LastKnownLocation="Tailspin.Models.uml" />
+      </annotatedElements>
+    </comment>
+    <comment Id="8779391a-a1ea-4614-8682-0581c0e11428">
+      <body>This is what we think we're doing.</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance Id="532ea607-fb19-44b8-8502-3351b05452be" name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase Id="95217218-b168-41b8-85fe-badf794f79fd" name="View Home Page" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="3e88b215-5e8f-4acb-bcc6-5ec957f4bd42" name="Browse Product Category" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor Id="1501802d-a1b0-4aea-adc1-9a16406a4225" name="Shopper" isAbstract="false" isLeaf="false">
+        <targetEnds>
+          <association Id="5848a62b-3567-45e6-a90a-0970eb445e6c" isDerived="false" sourceEndRoleName="Shopper" targetEndRoleName="View Home Page" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="95217218-b168-41b8-85fe-badf794f79fd" LastKnownName="View Home Page" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e97cabd1-9a08-47ff-9647-b66d5f388076" name="Shopper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4e461fb1-b550-4c42-9286-96a1db145785" name="View Home Page" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association Id="5d32f86b-5cad-46df-8acb-c5d3a8e0cae9" isDerived="false" sourceEndRoleName="Shopper" targetEndRoleName="Browse Product Category" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3e88b215-5e8f-4acb-bcc6-5ec957f4bd42" LastKnownName="Browse Product Category" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6c57f2eb-c0fa-4d50-bfd8-824f6cbbbd55" name="Shopper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="27c8a6f1-693f-4a32-9a9c-72ddc7a8f598" name="Browse Product Category" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association Id="9b5c6eec-893b-4d52-bb30-a82da24907da" isDerived="false" sourceEndRoleName="Shopper" targetEndRoleName="Select product and add to cart" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e636a04b-e7c4-4156-b3e2-fa56299307b1" LastKnownName="Select product and add to cart" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a8ff1d76-29d9-47ec-90a8-e202ded0a734" name="Shopper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0a82a95c-0d20-44b5-9ec9-a405c620f785" name="Select product and add to cart" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association Id="076b026d-ff9c-4a77-a993-436fd6b2141c" isDerived="false" sourceEndRoleName="Shopper" targetEndRoleName="Checkout" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fc0f1c6d-ffc8-4ced-bab5-8c3bc5b2b939" LastKnownName="Checkout" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="49c86caa-739e-41d4-9733-da210517b43f" name="Shopper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e8572fab-88bd-468f-9e64-6ae7b954eade" name="Checkout" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e636a04b-e7c4-4156-b3e2-fa56299307b1" name="Select product and add to cart" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="fc0f1c6d-ffc8-4ced-bab5-8c3bc5b2b939" name="Checkout" isAbstract="false" isLeaf="false">
+        <additions>
+          <include Id="fad25e67-4d87-433e-b148-bc05b0330144">
+            <useCaseMoniker Id="ae59fd24-478c-43e9-afa5-966f11d7a564" LastKnownName="Check-in" LastKnownLocation="Tailspin.Models.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="ae59fd24-478c-43e9-afa5-966f11d7a564" name="Check-in" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="2d0e2511-775c-4e66-b382-e415cd389388" name="Subscribe to a product line" isAbstract="false" isLeaf="false">
+        <extendedCases>
+          <extend Id="90aa7984-d3fc-4689-953b-224598daaa4e">
+            <useCaseMoniker Id="e636a04b-e7c4-4156-b3e2-fa56299307b1" LastKnownName="Select product and add to cart" LastKnownLocation="Tailspin.Models.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity Id="282b3808-8420-4500-8f7c-348b05639f27" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <nodes>
+          <initialNode Id="76199040-8d71-4565-a9bc-cd499f5f17e2" name="Initial1" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="6eaf60b2-e2f2-46fc-98b7-e7c1d99b0d54" isLeaf="false">
+                <opaqueActionMoniker Id="05e7d60c-de58-48d0-ab44-d896da3066e2" LastKnownName="Home Page" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="05e7d60c-de58-48d0-ab44-d896da3066e2" name="Home Page" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="3805f8e9-c4cb-4ca4-b946-09339b0ef03b" isLeaf="false">
+                <opaqueActionMoniker Id="9f867250-d0d9-4876-be20-8de4e0018391" LastKnownName="Select plane from New Planes list" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="9f867250-d0d9-4876-be20-8de4e0018391" name="Select plane from New Planes list" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="40b1694a-19d5-42ba-8509-2ccd49eafb66" isLeaf="false">
+                <opaqueActionMoniker Id="81ad8ae3-31c8-4500-a020-391a9429c38f" LastKnownName="Add item to the cart" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="81ad8ae3-31c8-4500-a020-391a9429c38f" name="Add item to the cart" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="307f32c0-5124-4222-a532-3019d792ece9" isLeaf="false">
+                <opaqueActionMoniker Id="e59f4c76-379e-4c06-a4a2-7f16d080b75b" LastKnownName="Checkout" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e59f4c76-379e-4c06-a4a2-7f16d080b75b" name="Checkout" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="eaa28e5d-1c1d-4193-95ff-bc851833494e" isLeaf="false">
+                <decisionNodeMoniker Id="5945e5d7-a985-4711-8e60-6b4aaecbf52b" LastKnownName="Decision1" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="5945e5d7-a985-4711-8e60-6b4aaecbf52b" name="Decision1" isLeaf="false">
+            <description>Login</description>
+            <flowNodeTargets>
+              <controlFlow Id="926c41cc-433d-4935-8c15-3effeeb89a14" guard="Anonymous" isLeaf="false">
+                <opaqueActionMoniker Id="c2bb6045-f3ca-47cb-afbe-83c6b0c77837" LastKnownName="Enter address" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+              <controlFlow Id="f148bd66-7285-4bb6-b096-bb30d8ffd8af" guard="Login" isLeaf="false">
+                <mergeNodeMoniker Id="db019cf9-5097-48a5-bfa7-8159e3cddad6" LastKnownName="Merge1" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="c2bb6045-f3ca-47cb-afbe-83c6b0c77837" name="Enter address" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="7dca9c0c-46c2-4f55-9fe5-0230f4e3d2ef" isLeaf="false">
+                <mergeNodeMoniker Id="db019cf9-5097-48a5-bfa7-8159e3cddad6" LastKnownName="Merge1" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f88b6db5-7b8d-4380-bb21-7fae7291362d" name="Choosing shipping method" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="e952f191-1e0b-49e3-b2ca-16d36c8a830a" isLeaf="false">
+                <opaqueActionMoniker Id="f0507db5-7bcb-447c-a07c-37f769f78e36" LastKnownName="Place order" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f0507db5-7bcb-447c-a07c-37f769f78e36" name="Place order" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="c96243f3-590c-4b02-81d2-6d3506200f15" isLeaf="false">
+                <opaqueActionMoniker Id="ca921162-43d7-4ca9-a17e-eba94bed7442" LastKnownName="Confirmation" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="922c9eee-694f-48c5-8267-f5d10a6020a5" name="ActivityFinal1" isLeaf="false" />
+          <opaqueAction Id="ca921162-43d7-4ca9-a17e-eba94bed7442" name="Confirmation" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="baba51dc-308f-435a-b629-101c4c92369e" isLeaf="false">
+                <activityFinalNodeMoniker Id="922c9eee-694f-48c5-8267-f5d10a6020a5" LastKnownName="ActivityFinal1" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="db019cf9-5097-48a5-bfa7-8159e3cddad6" name="Merge1" isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow Id="8b50a441-d7d4-4baf-8507-1d14e6e40464" isLeaf="false">
+                <opaqueActionMoniker Id="f88b6db5-7b8d-4380-bb21-7fae7291362d" LastKnownName="Choosing shipping method" LastKnownLocation="Tailspin.Models.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component Id="6ef26124-117d-42b9-a66d-b42d6a1cea15" name="Database" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface Id="4a05cf4a-e054-44ad-950d-6a40f611689c" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker Id="f7924991-5dd5-4844-b03e-601c677ca9d6" LastKnownName="LINQ to SQL" LastKnownLocation="Tailspin.Models.uml" />
+            </type_NamedElement>
+          </providedInterface>
+          <providedInterface Id="5ef84056-1ee1-41e8-9077-a0d661373c0f" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker Id="03a6e436-b529-46a3-9a4f-184659695ad7" LastKnownName="ADO.Net" LastKnownLocation="Tailspin.Models.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface Id="fe741a1d-696e-4f18-b6d5-0392d5380206" name="Interface1" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component Id="2f4a467d-6feb-4adc-b6a8-f739435b8dc6" name="Admin App" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <ownedAttributesInternal>
+          <requiredInterface Id="eac78504-7148-47de-b8fe-9752e7c0cc5d" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <suppliersInternal>
+              <dependency Id="131d1949-a7af-42fc-811d-f85929a663f0">
+                <providedInterfaceMoniker Id="4a05cf4a-e054-44ad-950d-6a40f611689c" LastKnownName="Port1" LastKnownLocation="Tailspin.Models.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="ba481c18-6439-4a01-8c63-af34bd9ce976" LastKnownName="LINQ to SQL" LastKnownLocation="Tailspin.Models.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface Id="f7924991-5dd5-4844-b03e-601c677ca9d6" name="LINQ to SQL" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface Id="ba481c18-6439-4a01-8c63-af34bd9ce976" name="LINQ to SQL" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component Id="90de82c8-e8f8-4c38-8f1a-dec95951ddbb" name="Infrastructure" isAbstract="false" isLeaf="false" isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface Id="03a6e436-b529-46a3-9a4f-184659695ad7" name="ADO.Net" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component Id="7b0ba039-34ea-4525-b9de-5f7553253fd2" name="Repository" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <suppliersInternal>
+          <dependency Id="05bc3a0b-991f-443d-bf2d-ce4b5830107f">
+            <componentMoniker Id="6c7782de-7c23-421e-9b7f-4e2adbc67a0a" LastKnownName="Model" LastKnownLocation="Tailspin.Models.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface Id="f71b0b53-bab9-4dbb-a6b5-64254fd13da1" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <suppliersInternal>
+              <dependency Id="c443c38d-93e4-41ca-bd13-2df6a7a8bba8">
+                <providedInterfaceMoniker Id="5ef84056-1ee1-41e8-9077-a0d661373c0f" LastKnownName="Port2" LastKnownLocation="Tailspin.Models.uml" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="ad8af10b-b48c-4b4a-86a8-eb72ca8e1e53" LastKnownName="ADO.Net" LastKnownLocation="Tailspin.Models.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component Id="6c7782de-7c23-421e-9b7f-4e2adbc67a0a" name="Model" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <suppliersInternal>
+          <dependency Id="ccaf023d-2bfa-4c60-aac6-0e968ecafe38">
+            <componentMoniker Id="90de82c8-e8f8-4c38-8f1a-dec95951ddbb" LastKnownName="Infrastructure" LastKnownLocation="Tailspin.Models.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component Id="fd64b988-e681-4684-b569-1945973ee8ce" name="Component1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <suppliersInternal>
+          <dependency Id="a722f100-e0f8-416f-bb1a-c8469afcd448">
+            <componentMoniker Id="7b0ba039-34ea-4525-b9de-5f7553253fd2" LastKnownName="Repository" LastKnownLocation="Tailspin.Models.uml" />
+          </dependency>
+          <dependency Id="ed275063-da71-4b04-a709-d620c05c6e5e">
+            <componentMoniker Id="6c7782de-7c23-421e-9b7f-4e2adbc67a0a" LastKnownName="Model" LastKnownLocation="Tailspin.Models.uml" />
+          </dependency>
+          <dependency Id="2cd0685f-a6fc-4f1f-a233-47ad40efce0d">
+            <componentMoniker Id="90de82c8-e8f8-4c38-8f1a-dec95951ddbb" LastKnownName="Infrastructure" LastKnownLocation="Tailspin.Models.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface Id="ad8af10b-b48c-4b4a-86a8-eb72ca8e1e53" name="ADO.Net" isAbstract="false" isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="01f1475a-0a08-473e-b107-12970055badd" name="Product" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <targetEnds>
+          <association Id="2cc6d6f1-c9d1-4a3e-9db9-bdf8611e2be1" isDerived="false" sourceEndRoleName="Product" targetEndRoleName="Related Product" isLeaf="false" isAbstract="false">
+            <classMoniker Id="01f1475a-0a08-473e-b107-12970055badd" LastKnownName="Product" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d9f50da2-b0cb-47f5-ba87-60712a981c43" name="Product" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="83f4e2e9-f19d-4dc8-9623-0583d6ca151c" name="Related Product" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="7c887791-f79e-4726-9d28-09194f9e8a0f" name="Lower" value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="e9948518-f15f-48c8-a8f6-35fb26174f6a" name="Upper" value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association Id="aa348083-be58-491f-a5a6-581950f6dfa3" isDerived="false" sourceEndRoleName="Product" targetEndRoleName="Product Description" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d4d33986-c14c-4f1b-a9b7-e9563f6b237e" LastKnownName="Product Description" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f87352c8-ca96-47ac-8c96-71436d13c851" name="Product" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ec03c4fb-e4c4-46b7-86e3-77c47c59c4aa" name="Product Description" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="062a4a49-071d-459e-9843-2edbd016a65f" name="Lower" value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="8e2ca228-0613-430c-b6de-569f56ff6224" name="Upper" value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="f20c83de-2f52-427e-8021-35473c8cfdf5" name="SKU" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+          <property Id="464ff157-372a-4b34-a1e4-4d9648b4e688" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="d4d33986-c14c-4f1b-a9b7-e9563f6b237e" name="Product Description" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <ownedAttributesInternal>
+          <property Id="d475ab62-2a90-4cb5-9508-d96e28a37f4b" name="Body" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+          <property Id="d936f289-8c57-4512-b0a9-b56fabcf86a8" name="Title" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="e1c0c199-9f11-4419-a794-c328d7f41edc" name="Category" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <targetEnds>
+          <association Id="17b00aba-8660-4bbc-9cd8-0da0e23b0d3d" isDerived="false" sourceEndRoleName="Category" targetEndRoleName="Product" isLeaf="false" isAbstract="false">
+            <classMoniker Id="01f1475a-0a08-473e-b107-12970055badd" LastKnownName="Product" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="16345540-62e6-45cf-9de1-45e51cd6df5b" name="Category" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="81a1dc16-2f2e-49c2-bdad-067c82e024e1" name="Product" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="0ba2621e-15dc-4d0d-ac6d-efe9ab40f1d4" name="Lower" value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="57c1639d-2e83-4321-8b8e-f9573b51937d" name="Upper" value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="2b4bba6b-4575-4ba4-b13f-1f7b33f85727" name="Customer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <targetEnds>
+          <association Id="8e8fcbcb-d44c-4c63-a016-18a35e7d25fb" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="Shopping Cart" isLeaf="false" isAbstract="false">
+            <classMoniker Id="519d1f79-2d63-4384-a834-860507bad0cf" LastKnownName="Shopping Cart" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a752af34-ee05-48ad-b4f2-299290d5c1f2" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="44aa357c-793b-427d-8cbd-ed748942cf3d" name="Shopping Cart" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="6a8fba64-122c-4d40-b298-1c93b10f5dff" name="Lower" value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="60e92245-fd4a-47b6-ac1c-fa737f16c064" name="Upper" value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="519d1f79-2d63-4384-a834-860507bad0cf" name="Shopping Cart" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <targetEnds>
+          <association Id="5cd1ee04-5283-4c0a-addc-b90aeac02772" isDerived="false" sourceEndRoleName="Shopping Cart" targetEndRoleName="Shopping Cart Item" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4db820a0-8690-4ac5-8355-0391d226169c" LastKnownName="Shopping Cart Item" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="750f8f6b-f6cd-4f0c-b5f9-bc38aad9a182" name="Shopping Cart" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7afc9581-6e85-433e-84ab-d164e78ad63b" name="Shopping Cart Item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="91051c75-78ce-4d6b-b310-6645ca0253ab" name="Lower" value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="eef6af11-8349-4c1c-9057-7e1bf6d5e627" name="Upper" value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="4db820a0-8690-4ac5-8355-0391d226169c" name="Shopping Cart Item" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <targetEnds>
+          <association Id="2a8dc222-a262-459d-ac1a-c2102fb8292e" isDerived="false" sourceEndRoleName="Shopping Cart Item" targetEndRoleName="Product" isLeaf="false" isAbstract="false">
+            <classMoniker Id="01f1475a-0a08-473e-b107-12970055badd" LastKnownName="Product" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="de5d3c1d-7c3b-4748-9ee6-435f9756c10e" name="Shopping Cart Item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="e41e939d-9081-4158-8eba-5207d1ffce65" name="Lower" value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="5a64513d-241b-4c3e-b3fb-132f2e149ef6" name="Upper" value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9bcd8c67-dcb8-491b-9b48-6b7aff2d1c4c" name="Product" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="018b913d-00bd-4d77-a7b4-3552776962a1" name="Order Line" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <targetEnds>
+          <association Id="bb25546d-4364-4ba7-a3d8-2a796ddc6825" isDerived="false" sourceEndRoleName="Order Line" targetEndRoleName="Product" isLeaf="false" isAbstract="false">
+            <classMoniker Id="01f1475a-0a08-473e-b107-12970055badd" LastKnownName="Product" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2974501d-3a96-4d52-998e-f69b3060bf55" name="Order Line" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="b608484b-525e-4b23-834f-690b8f231042" name="Lower" value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="90d16fdc-2eb5-488f-b639-d16e5c480f82" name="Upper" value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c54b0123-209d-46bf-9f86-2cc36a8d11ad" name="Product" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class Id="1e0a2a9b-8247-4eea-b195-772f87e6e0ff" name="Order" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <targetEnds>
+          <association Id="a63bd71c-2488-4ceb-b48d-1002bb9df61c" isDerived="false" sourceEndRoleName="Order" targetEndRoleName="Order Line" isLeaf="false" isAbstract="false">
+            <classMoniker Id="018b913d-00bd-4d77-a7b4-3552776962a1" LastKnownName="Order Line" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2a4d7478-fd30-41e5-989c-b5da9f92d94c" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="24ff165d-2b5c-430c-a38e-f23783c1b754" name="Order Line" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="c16f2232-98f1-43fa-b3c1-ebbd1c556685" name="Lower" value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="3a525dde-b627-4a36-a8ea-4cf1942d53c7" name="Upper" value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association Id="b2ef46ca-314b-40a0-8242-a3da907b0391" isDerived="false" sourceEndRoleName="Order" targetEndRoleName="Customer" isLeaf="false" isAbstract="false">
+            <classMoniker Id="2b4bba6b-4575-4ba4-b13f-1f7b33f85727" LastKnownName="Customer" LastKnownLocation="Tailspin.Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3c52bbf-898f-49fa-b0d4-d0c25ce60ad4" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="1d641a6e-d266-46c2-91c6-e7e5644370dd" name="Lower" value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="28be5e5a-bc3b-4c85-a3ef-56bfde1c5994" name="Upper" value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a9950830-d9b5-486c-9d1c-a121d8762f2f" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType Id="220a3521-e091-4221-bae9-3ef9018e845c" name="Integer" isAbstract="false" isLeaf="false" />
+  <primitiveType Id="8943dc84-709e-4f62-b15a-a3273aa6f165" name="Boolean" isAbstract="false" isLeaf="false" />
+  <primitiveType Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" name="String" isAbstract="false" isLeaf="false" />
+  <primitiveType Id="3ab42e7d-4969-445a-b209-471f5cb8209c" name="UnlimitedNatural" isAbstract="false" isLeaf="false" />
+</modelStoreModel>

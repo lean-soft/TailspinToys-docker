@@ -1,0 +1,159 @@
+﻿<#@ include file="Utility.tt" #>
+using System;
+using System.Text;
+using System.Collections.Generic;
+using Tailspin.Infrastructure;
+using System.Linq.Expressions;
+using System.Data.Common;
+using System.Linq;
+
+namespace Tailspin.SimpleSqlRepository {
+
+<#
+    Init();
+    DataTable tables = GetTables();
+    string connectionStringName="TailspinConnectionString";
+    
+    foreach (DataRow row in tables.Rows) {
+        string tableName=row["TABLE_NAME"].ToString();
+        string tableType=row["TABLE_TYPE"].ToString();
+        DataTable columns=GetColumns(tableName);
+        
+        DataRow PK=GetPK(tableName);
+        string pkName="";
+        if(PK!=null)
+            pkName=PK["COLUMN_NAME"].ToString();
+        
+        string columnList=CreateColumnList(columns);
+        
+        if (tableType == "BASE TABLE" &! tableName.StartsWith("sys") && tableName!="ObjectStore") {#>
+ 
+
+        public static class <#=CleanName(tableName)#>Table{
+            public const string TABLE_NAME=@"<#=QualifyTable(row)#>";
+            public const string COLUMN_LIST=@"<#=columnList#>";
+ 
+    <#foreach(DataRow dr in columns.Rows){
+        string sysType=GetSysType(dr["data_type"].ToString());
+        string colName=dr["column_name"].ToString();#>
+            public static <#=sysType#> Read<#=CleanName(colName)#>(DbDataReader rdr){
+                <#=sysType#> result;
+                <#if(sysType=="string"){#>
+                result= rdr["<#=colName#>"].ToString();
+                <#}else if(sysType=="Guid" || sysType=="byte[]"){#>
+                result=(<#=sysType#>)rdr["<#=colName#>"];
+                <#}else{#>
+                if(!<#=sysType#>.TryParse(rdr["<#=colName#>"].ToString(), out result))
+				{
+					<#if(sysType=="bool"){#>
+					result = false;
+					<#}else{#>
+					result = <#=sysType#>.MinValue;
+					<#}#>
+				}
+                <#}#>
+                return result;
+            }
+    <#}#>
+    
+            
+            public struct Parameters{
+    <#foreach(DataRow dr in columns.Rows){#>
+                public static string <#=CleanName(dr["column_name"].ToString())#>="<#=Parameterize(dr)#>";
+    <#}#>
+            }    
+            
+            public struct Columns{
+    <#foreach(DataRow dr in columns.Rows){#>
+                public static string <#=CleanName(dr["column_name"].ToString())#>="<#=dr["column_name"].ToString()#>";
+    <#}#>
+            } 
+            public struct ColumnsQualified{
+    <#foreach(DataRow dr in columns.Rows){#>
+                public static string <#=CleanName(dr["column_name"].ToString())#>="<#=QualifyColumn(dr)#>";
+    <#}#>
+            }
+                 
+            static Dictionary<string, string> _qualifiedColumns;
+            static Dictionary<string, string> QualifiedColumns{
+                get{
+                    if(_qualifiedColumns==null){
+                        _qualifiedColumns=new Dictionary<string,string>();
+    <#foreach(DataRow dr in columns.Rows){#>
+                        _qualifiedColumns.Add("<#=CleanName(dr["column_name"].ToString())#>","<#=QualifyColumn(dr)#>");
+    <#}#>
+                    }
+                    return _qualifiedColumns;
+                }
+            }
+
+          
+            public static SqlStatement Select(){
+                return Select(COLUMN_LIST.Split(new char[]{','},StringSplitOptions.RemoveEmptyEntries));
+            }
+
+            public static SqlStatement Select(params string[] columns){
+                //for jon galloway
+                var sql=new SqlStatement("<#=connectionStringName#>");
+                StringBuilder sb=new StringBuilder();
+                sb.Append("SELECT ");
+                
+                int indexer=1;
+                foreach(string s in columns){
+                    string qualifiedName=s;
+                    if(QualifiedColumns.ContainsKey(s))
+                        qualifiedName=QualifiedColumns[s];
+                    sb.AppendFormat("{0}",qualifiedName);
+                    if(indexer<columns.Length)
+                        sb.Append(",");
+                    indexer++;
+                }
+                sb.AppendFormat("\r\nFROM {0} ",TABLE_NAME);
+                sb.AppendLine();
+                sql.Add(sb.ToString());
+                return sql; 
+
+            } 
+
+            public static SqlStatement Insert(Dictionary<string,object> settings){
+                var sql=new SqlStatement("<#=connectionStringName#>");
+                StringBuilder sb=new StringBuilder();
+                sb.Append("INSERT INTO <#=QualifyTable(row)#>(");
+                int indexer=1;
+                foreach(string key in settings.Keys){
+                    
+                    sb.Append(key);
+                    if(indexer<settings.Count)
+                        sb.Append(",");
+
+                    sql.AddInsertValue(key,settings[key]);
+                    indexer++;
+                }
+                sb.AppendLine(")");
+                sql.Add(sb.ToString());
+                return sql;
+            }
+            
+           
+            public static SqlStatement Update(Dictionary<string,object> settings){
+                var sql=new SqlStatement("<#=connectionStringName#>");
+                sql.Add(string.Format("UPDATE {0} SET ","<#=QualifyTable(row)#>"));
+                foreach(string key in settings.Keys){
+                    sql.AddSetting(key,settings[key]);
+                }
+                return sql;
+            }
+            
+
+            public static SqlStatement Delete(){
+                var sql=new SqlStatement("<#=connectionStringName#>");
+                sql.Add("DELETE FROM <#=QualifyTable(row)#>");
+                return sql;
+            }
+        }
+        <#}
+    }
+    Dispose();
+    #>
+
+}

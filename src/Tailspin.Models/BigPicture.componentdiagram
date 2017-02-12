@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f78c1422-89ac-4af8-bbdf-259064a255ef" name="UMLComponentDiagram1" linkedPackageId="2be95012-d1ac-46f5-b49c-4a3fff99bc97" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <ownedCommentsInternal>
+    <comment Id="d8cfe1aa-fae3-43ab-855b-edc51fa71235">
+      <elementDefinition Id="9f353103-a2c4-4a74-bab5-36888b55b458" />
+      <body>Simplification to point out access methods.</body>
+      <annotatedElements>
+        <providedInterfaceMoniker Id="9678b0fa-c122-419b-bd63-1434d0c02e67" LastKnownName="Port2" />
+        <providedInterfaceMoniker Id="4917ca0b-3442-4a3e-824a-697cbc2e1b1a" LastKnownName="Port1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="0dc955d5-1114-45ff-80ee-92c48ea39c07">
+      <elementDefinition Id="8779391a-a1ea-4614-8682-0581c0e11428" />
+      <body>This is what we think we're doing.</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="cdb619af-e482-4a47-8c01-dacc0ada97b1">
+      <profileInstance Id="54199f0e-d4d7-40e1-a5c3-7841b939692a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b5335684-c5d2-4e17-87ab-2651e33adcb8">
+      <profileInstance Id="2d8d3841-7529-49e7-a2ad-6fa9270f5258" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="0b7dc291-f7fb-4981-bf2a-3c79e6142fb2" name="Database" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6ef26124-117d-42b9-a66d-b42d6a1cea15" />
+        <ownedAttributesInternal>
+          <providedInterface Id="4917ca0b-3442-4a3e-824a-697cbc2e1b1a" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="4a05cf4a-e054-44ad-950d-6a40f611689c" />
+            <type_NamedElement>
+              <interfaceMoniker Id="f5e2d52e-ddd9-4354-bce8-5fa29d9a9c68" LastKnownName="LINQ to SQL" />
+            </type_NamedElement>
+          </providedInterface>
+          <providedInterface Id="9678b0fa-c122-419b-bd63-1434d0c02e67" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="5ef84056-1ee1-41e8-9077-a0d661373c0f" />
+            <type_NamedElement>
+              <interfaceMoniker Id="0be7a56c-1efa-40d7-ade9-75aa433850ef" LastKnownName="ADO.Net" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="0c0dc24f-89b4-4e9d-86f2-0dc13f788c06" name="Admin App" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2f4a467d-6feb-4adc-b6a8-f739435b8dc6" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="e8b611b9-a80a-4b78-b4fe-0cac9ca6b0b0" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="eac78504-7148-47de-b8fe-9752e7c0cc5d" />
+            <suppliersInternal>
+              <dependency Id="8b259ac8-87a5-4438-854f-a2bf883f30e6">
+                <providedInterfaceMoniker Id="4917ca0b-3442-4a3e-824a-697cbc2e1b1a" LastKnownName="Port1" />
+                <elementDefinition Id="131d1949-a7af-42fc-811d-f85929a663f0" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="abcbe889-5cf4-4941-bd3f-b3ca834aa85b" LastKnownName="LINQ to SQL" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="f5e2d52e-ddd9-4354-bce8-5fa29d9a9c68" name="LINQ to SQL" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f7924991-5dd5-4844-b03e-601c677ca9d6" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="abcbe889-5cf4-4941-bd3f-b3ca834aa85b" name="LINQ to SQL" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ba481c18-6439-4a01-8c63-af34bd9ce976" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="bc433711-10cf-4e7c-93a7-48f52915a6d5" name="Infrastructure" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="90de82c8-e8f8-4c38-8f1a-dec95951ddbb" />
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="0be7a56c-1efa-40d7-ade9-75aa433850ef" name="ADO.Net" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="03a6e436-b529-46a3-9a4f-184659695ad7" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="11d5969d-6aa0-43e3-8b6d-67455a7ca391" name="Repository" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7b0ba039-34ea-4525-b9de-5f7553253fd2" />
+        <suppliersInternal>
+          <dependency Id="acd19e92-6d57-43b4-9ca7-1a5c84294f87">
+            <componentMoniker Id="257f9676-0d12-4d34-9c86-3aa01e80cdfc" LastKnownName="Model" />
+            <elementDefinition Id="05bc3a0b-991f-443d-bf2d-ce4b5830107f" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface Id="efe3c4b6-7c80-4be1-ad1f-40d74edfa2f0" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="f71b0b53-bab9-4dbb-a6b5-64254fd13da1" />
+            <suppliersInternal>
+              <dependency Id="80ca5a18-8d75-4df8-88fc-2b872ef891fe">
+                <providedInterfaceMoniker Id="9678b0fa-c122-419b-bd63-1434d0c02e67" LastKnownName="Port2" />
+                <elementDefinition Id="c443c38d-93e4-41ca-bd13-2df6a7a8bba8" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="655cf986-e7f4-4003-9fa8-1f8c12cc1390" LastKnownName="ADO.Net" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="257f9676-0d12-4d34-9c86-3aa01e80cdfc" name="Model" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6c7782de-7c23-421e-9b7f-4e2adbc67a0a" />
+        <suppliersInternal>
+          <dependency Id="f904d328-4edd-4f6c-8514-fc49348115f0">
+            <componentMoniker Id="bc433711-10cf-4e7c-93a7-48f52915a6d5" LastKnownName="Infrastructure" />
+            <elementDefinition Id="ccaf023d-2bfa-4c60-aac6-0e968ecafe38" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="0304138f-1bd4-46fb-9c65-52a5b56ff58f" name="Component1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fd64b988-e681-4684-b569-1945973ee8ce" />
+        <suppliersInternal>
+          <dependency Id="66d12a99-700d-4756-b6f8-f2038457ae23">
+            <componentMoniker Id="11d5969d-6aa0-43e3-8b6d-67455a7ca391" LastKnownName="Repository" />
+            <elementDefinition Id="a722f100-e0f8-416f-bb1a-c8469afcd448" />
+          </dependency>
+          <dependency Id="5bdf5d97-4e70-4b1d-818c-1c298dfe161a">
+            <componentMoniker Id="257f9676-0d12-4d34-9c86-3aa01e80cdfc" LastKnownName="Model" />
+            <elementDefinition Id="ed275063-da71-4b04-a709-d620c05c6e5e" />
+          </dependency>
+          <dependency Id="bd44fa5e-2b53-4aae-892c-d91193d135df">
+            <componentMoniker Id="bc433711-10cf-4e7c-93a7-48f52915a6d5" LastKnownName="Infrastructure" />
+            <elementDefinition Id="2cd0685f-a6fc-4f1f-a233-47ad40efce0d" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="655cf986-e7f4-4003-9fa8-1f8c12cc1390" name="ADO.Net" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ad8af10b-b48c-4b4a-86a8-eb72ca8e1e53" />
+      </Interface>
+    </modelContainsNamedElements>
+  </packagedElements>
+  <package Id="2be95012-d1ac-46f5-b49c-4a3fff99bc97" name="Tailspin.Models">
+    <elementDefinition Id="71722790-c434-4bf8-b875-e75b96b755ea" />
+  </package>
+</componentModel>

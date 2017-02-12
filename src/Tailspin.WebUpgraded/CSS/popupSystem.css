@@ -1,0 +1,48 @@
+/* STYLESHEET SECTIONS
+   CSS Flags marked with [=]
+	 
+	 POPUP MENU STYLES
+	 MAGIC STUFF - DO NOT EDIT
+	 MAGIC STUFF
+	 Currently supports 5 tiers.
+	 	 
+	 ....................................... */
+
+/* =POPUP MENU STYLES
+	 ....................................... */
+ul#ul_NavBar ul {
+	position: absolute;
+	display: none;
+}
+
+/* =MAGIC STUFF - DO NOT EDIT
+	 ....................................... */
+/* Fix IE. Hide from IE Mac \*/
+* html ul#ul_NavBar li { float: left; height: 1%; }
+* html ul#ul_NavBar a { height: 1%; }
+/* End */
+
+/* =MAGIC STUFF
+    Currently supports 5 tiers.
+	 ....................................... */
+ul#ul_NavBar li:hover ul ul,
+ul#ul_NavBar li:hover ul ul ul,
+ul#ul_NavBar li:hover ul ul ul ul,
+ul#ul_NavBar li:hover ul ul ul ul ul,
+ul#ul_NavBar li.over ul ul,
+ul#ul_NavBar li.over ul ul ul, 
+ul#ul_NavBar li.over ul ul ul ul,
+ul#ul_NavBar li.over ul ul ul ul ul
+	{ display: none; } /* Hide sub-menus initially */
+	
+ul#ul_NavBar li:hover ul,
+ul#ul_NavBar li li:hover ul,
+ul#ul_NavBar li li li:hover ul,
+ul#ul_NavBar li li li li:hover ul,
+ul#ul_NavBar li li li li li:hover ul,
+ul#ul_NavBar li.over ul,
+ul#ul_NavBar li li.over ul,
+ul#ul_NavBar li li li.over ul,
+ul#ul_NavBar li li li li.over ul,
+ul#ul_NavBar li li li li li.over ul
+	{ display: block;} /* The magic */

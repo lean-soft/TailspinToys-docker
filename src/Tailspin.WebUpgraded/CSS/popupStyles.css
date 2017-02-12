@@ -1,0 +1,102 @@
+/* STYLESHEET SECTIONS
+   CSS Flags marked with [=]
+	 
+	 MAIN MENU STYLES 
+	 MAIN MENU ITEM STYLES
+	 POPUP MENU STYLES - TIER 1
+	 POPUP MENU STYLES - TIER 2
+	 POPUP MENU STYLES - TIER 3
+	 	 
+	 ....................................... */
+
+/* =MAIN MENU STYLES 
+	 ....................................... */
+ul#ul_NavBar,
+ul#ul_NavBar ul {
+	margin:0px;
+	padding:0px;
+}
+ul#ul_NavBar {
+	padding: 0 10px;
+	background-color: #666;
+	height: 22px;
+}
+ul#ul_NavBar li {	
+	position:relative;	
+	float:left;
+	list-style:none;
+}
+
+/* =MAIN MENU ITEM STYLES
+	 ....................................... */
+ul#ul_NavBar li a {
+	display: block;	
+	float:left;
+	font-size: 12px;
+}
+ul#ul_NavBar a {
+	/* Styles */
+	display: block;
+	color: #fff;
+	padding: 2px 20px 2px 20px;
+	font-weight: bold;
+}
+ul#ul_NavBar a:hover {
+	color:#fff;
+	background-color: #999;
+	text-decoration: underline;
+}
+
+/* =POPUP MENU STYLES - TIER 1
+	 ....................................... */
+ul#ul_NavBar ul {
+	/* Relative Positioning */
+	left: 0px;
+	top: 22px;
+	/* Styles */
+	width: 120px;
+	background-color: #666;
+	margin:0;
+	padding:10px 0 10px 0;
+}
+ul#ul_NavBar ul li {
+	float: none;
+}
+ul#ul_NavBar ul a {
+	padding: 2px 20px 2px 20px;
+	margin: 0px 0px 0px 0px;
+	float: none;
+	font-size: 11px;
+	color: #ccc;
+	font-weight: normal;
+} 	
+ul#ul_NavBar ul a:hover {
+	color: #fff;
+	background-color: #999;
+	text-decoration: underline;
+}
+
+/* =POPUP MENU STYLES - TIER 2
+	 ....................................... */
+ul#ul_NavBar ul ul {
+	left: 120px; /* Same as width of "ul#ul_NavBar ul" */
+	top: -9px;  /* Positioning vertically*/
+	
+	background-color: #999;
+}
+ul#ul_NavBar ul ul a { 
+	color: #666;
+}
+ul#ul_NavBar ul ul a:hover { 
+	color: #666;
+	background-color: #CCCCCC;
+}
+
+/* =POPUP MENU STYLES - TIER 3
+	 ....................................... */
+ul#ul_NavBar ul ul ul {
+}
+ul#ul_NavBar ul ul ul a {
+}
+ul#ul_NavBar ul ul ul a:hover { 
+}

@@ -1,0 +1,236 @@
+/* STYLESHEET SECTIONS
+   CSS Flags marked with [=]
+	 
+	 HTML STYLES
+	 MAIN STRUCTURE STYLES
+	 HOMEPAGE STYLES	 
+	 ....................................... */
+
+/* =HTML STYLES
+   ....................................... */
+body {
+	background: #5BBAD7;
+}
+
+/* =MAIN STRUCTURE STYLES
+   ....................................... */
+div.background-right {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	background: url(../Images/background-tile-right.png) repeat-x 0 0;
+	right: 0;
+}
+div.master {
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	background: transparent url(../Images/background-main.jpg) no-repeat top left;
+	left: 0;
+}
+div.wrapper {
+	width: 950px;
+	margin: 0 auto;
+	padding: 0 0 30px 0;
+}
+div.logo {
+    float: left;
+    position: absolute;
+    background: transparent;
+    left: 0;
+    top: 0;
+    width: 250;
+    height: 250;
+}
+div.header div.shopping-cart {
+	float: right;
+	width: 300px;
+	height: 36px;
+	padding: 4px 16px 0 14px;
+	background: transparent url(../Images/shopping-cart-background.png) no-repeat 0 0;
+}
+div.header div.top-menu {
+	float: right;
+	clear: right;
+	padding: 10px 10px 0 0;
+}
+div.content {
+	width: 930px;
+	padding: 0 10px 0 10px;
+	position: relative;
+}
+div.home {
+	width: 909px;
+	margin-left: 0px;
+	background: transparent url(../Images/plane-home.png) no-repeat 100% 0;
+	height: 317px;
+}
+ul.product-categories {
+	clear: both;
+	margin: 0;
+	padding: 0 0 0 10px;
+}
+ul.product-categories li {
+	display: block;
+	float: left;
+	width: 222px;
+	height: 211px;
+	margin: 0;
+	padding: 0 14px 0 0;
+	background: transparent url(../Images/product-category-background.png) no-repeat 0 0;
+}
+ul.product-categories li.last {
+	padding-right: 10px;
+}
+div.product-wrapper {
+	margin-left: 238px;
+	width: 692px;
+	background: transparent url(../Images/product-listing-background.png) repeat-y 0 0;
+}
+div.product-wrapper-btm {
+	margin-left: 238px;
+	width: 692px;
+	height: 10px;
+	margin-bottom: 14px;
+	background: transparent url(../Images/product-listing-background-btm.png) no-repeat 0 100%;
+}
+ul.footer {
+	margin: 0;
+	padding: 30px 10px 0 10px;
+}
+div.product-detail-top {
+	clear: both;
+	float: right;
+	width: 646px;
+	height: 4px;
+	margin: 0 23px;
+	background: transparent url(../Images/product-detail-top.png) no-repeat 0 0;
+}
+div.product-detail {
+	clear: both;
+	margin: 0 23px;
+	padding: 0 23px 1px 0;
+	background: #fff;
+}
+div.product-detail-btm {
+	clear: both;
+	float: right;
+	width: 646px;
+	height: 4px;
+	margin: 0 23px 13px 0;
+	background: transparent url(../Images/product-detail-btm.png) no-repeat 0 0;
+}
+div.related-products {
+	float: left;
+	position: absolute;
+	bottom: -6px;
+	*bottom: 8px;
+	left: 0;
+	width: 268px;
+	background: transparent url(../Images/related-products-btm.png) no-repeat bottom left;
+}
+div.related-products ul {
+	margin: 0 0 120px 0;
+	padding: 0 0 0 32px;
+	background: transparent url(../Images/related-products-tile.png) repeat-y 0 0;
+	line-height: 2em;
+	list-style-type: none;
+}
+div.related-products h2 {
+	background: transparent url(../Images/related-products-top.png) no-repeat 0 0;
+	margin: 0;
+	padding: 24px 0 14px 32px;
+	font-size: 116%; /* 15px */
+	font-weight: bold;
+}
+table.shopping-cart {
+	width: 638px;
+	margin: 0 0 0 4px;
+	border-collapse: collapse;
+}
+table.shopping-cart thead th {
+	height: 40px;
+	color: #fff;
+	font-weight: normal;
+	background: transparent url(../Images/shopping-cart-table-head.png) repeat-x 0 0;
+}
+table.shopping-cart thead th:first-child {
+	padding-left: 107px;
+}
+table.shopping-cart tbody td {
+	padding: 10px 0;
+	border-bottom: 1px dotted #91A3C0;
+}
+table.shopping-cart tbody tr td img {
+	padding: 0 0 0 10px;
+}
+table.shopping-cart input.remove {
+	width: 35px;
+	height: 35px;
+	padding: 35px 0 0 0;
+	background: transparent url(../Images/btn-remove.png) no-repeat 0 0;
+	border: none;
+	cursor: pointer;
+}
+table.shopping-cart input.remove:hover,
+table.shopping-cart input.remove:focus {
+	background-position:  0 -35px;
+}
+table.shopping-cart input.quantity {
+	width: 2em;
+	border: 1px solid #91A3C0;
+	text-align: center;
+}
+table.shopping-cart tfoot td {
+	padding: 20px 19px 20px 23px;
+}
+table.shopping-cart input.checkout {
+	display: block;
+	float: right;
+	width: 121px;
+	height: 64px;
+	padding: 64px 0 0 0;
+	border: 0;
+	background: transparent url(../Images/btn-checkout-large.png) no-repeat 0 0;
+	cursor: pointer;
+}
+table.shopping-cart input.checkout:hover,
+table.shopping-cart input.checkout:focus {
+	background-position: 0 -64px;
+}
+table.shopping-cart span.coupon-code {
+	display: block;
+	float: left;
+	width: 436px;
+	height: 56px;
+	margin: 4px 0 0 0;
+	background: transparent url(../Images/coupon-code-background.png) no-repeat 0 0;
+}
+table.shopping-cart span.coupon-code p {
+	float: left;
+	font-weight: bold;
+	line-height: 56px;
+	margin: 0 0 0 10px;
+}
+table.shopping-cart span.coupon-code input.coupon-code {
+	display: block;
+	float: left;
+	border: 1px solid #244782;
+	margin: 16px 0 0 10px;
+	padding: 3px;
+}
+table.shopping-cart span.coupon-code input.enter {
+	display: block;
+	width: 58px;
+	height: 35px;
+	margin: 11px 0 0 10px;
+	padding: 35px 0 0 0;
+	float: left;
+	border: none;
+	background: transparent url(../Images/btn-go.png) no-repeat 0 0;
+	cursor: pointer;
+}
+table.shopping-cart span.coupon-code input.enter:hover,
+table.shopping-cart span.coupon-code input.enter:focus {
+	background-position: 0 -35px;
+}

@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58610F2B-D2AA-4C77-85F2-4304F5D4FF12}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tailspin.WebUpgraded</RootNamespace>
+    <AssemblyName>Tailspin.WebUpgraded</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="StructureMap">
+      <HintPath>..\Dependencies\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Address.aspx" />
+    <Content Include="Cart.aspx" />
+    <Content Include="Content\XML\Ads.xml" />
+    <Content Include="CSS\cms.css" />
+    <Content Include="CSS\forms.css" />
+    <Content Include="CSS\grid.css" />
+    <Content Include="CSS\grid.png" />
+    <Content Include="CSS\ieStyles.css" />
+    <Content Include="CSS\lightbox.css" />
+    <Content Include="CSS\popupStyles.css" />
+    <Content Include="CSS\popupSystem.css" />
+    <Content Include="CSS\print.css" />
+    <Content Include="CSS\reset.css" />
+    <Content Include="CSS\structure.css" />
+    <Content Include="CSS\styles.css" />
+    <Content Include="CSS\typography.css" />
+    <Content Include="CSS\widgets.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Detail.aspx" />
+    <Content Include="Errors.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Finalize.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\background-main.jpg" />
+    <Content Include="Images\background-tile-right.png" />
+    <Content Include="Images\btn-add-cart.png" />
+    <Content Include="Images\btn-checkout-large.png" />
+    <Content Include="Images\btn-checkout.png" />
+    <Content Include="Images\btn-go.png" />
+    <Content Include="Images\btn-model.png" />
+    <Content Include="Images\btn-paper.png" />
+    <Content Include="Images\btn-remove.png" />
+    <Content Include="Images\btn-view-plane.png" />
+    <Content Include="Images\coupon-code-background.png" />
+    <Content Include="Images\logo-corner.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\plane-home.png" />
+    <Content Include="Images\product-categories.png" />
+    <Content Include="Images\product-category-background.png" />
+    <Content Include="Images\product-detail-btm.png" />
+    <Content Include="Images\product-detail-top.png" />
+    <Content Include="Images\product-listing-background-btm.png" />
+    <Content Include="Images\product-listing-background.png" />
+    <Content Include="Images\product-listing-btm.png" />
+    <Content Include="Images\product-listing-top.png" />
+    <Content Include="Images\related-products-btm.png" />
+    <Content Include="Images\related-products-tile.png" />
+    <Content Include="Images\related-products-top.png" />
+    <Content Include="Images\shopping-cart-background.png" />
+    <Content Include="Images\shopping-cart-icon.png" />
+    <Content Include="Images\shopping-cart-table-head.png" />
+    <Content Include="Images\trans.png" />
+    <Content Include="Listing.aspx" />
+    <Content Include="Motion\Tailspin.xap" />
+    <Content Include="ProductImages\cce-cart.jpg" />
+    <Content Include="ProductImages\cce-thumb.jpg" />
+    <Content Include="ProductImages\fcf-cart.jpg" />
+    <Content Include="ProductImages\fcf-thumb.jpg" />
+    <Content Include="ProductImages\nwt-cart.jpg" />
+    <Content Include="ProductImages\nwt-thumb.jpg" />
+    <Content Include="ProductImages\trr-cart.jpg" />
+    <Content Include="ProductImages\trr-thumb.jpg" />
+    <Content Include="ProductImages\wts-cart.jpg" />
+    <Content Include="ProductImages\wts-thumb.jpg" />
+    <Content Include="ProductImages\wwi-cart.jpg" />
+    <Content Include="ProductImages\wwi-thumb.jpg" />
+    <Content Include="Receipt.aspx" />
+    <Content Include="Scripts\clear.gif" />
+    <Content Include="Scripts\cufon-yui.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\lightbox+++.js" />
+    <Content Include="Scripts\PopUpMenu.js" />
+    <Content Include="Scripts\Silverlight.js" />
+    <Content Include="Scripts\StateDropDown.js" />
+    <Content Include="Scripts\Stencil_Std_700.font.js" />
+    <Content Include="Scripts\unitpngfix.js" />
+    <Content Include="Shared\AddressDisplay.ascx" />
+    <Content Include="Shared\AddressEntry.ascx" />
+    <Content Include="Shared\ComingSoon.ascx" />
+    <Content Include="Shared\CreditCard.ascx" />
+    <Content Include="Shared\Favorites.ascx" />
+    <Content Include="Shared\FeaturedProduct.ascx" />
+    <Content Include="Shared\Html.ascx" />
+    <Content Include="Shared\Menu.ascx" />
+    <Content Include="Shared\NewProducts.ascx" />
+    <Content Include="Shared\ProductList.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\DI\Bootstrapper.cs" />
+    <Compile Include="Infrastructure\DI\StructureMapControllerFactory.cs" />
+    <Compile Include="Infrastructure\Helpers\ControllerExtensions.cs" />
+    <Compile Include="Infrastructure\Helpers\CSSExtensions.cs" />
+    <Compile Include="Infrastructure\Helpers\CurrencyExtensions.cs" />
+    <Compile Include="Infrastructure\Helpers\CustomerExtensions.cs" />
+    <Compile Include="Infrastructure\Helpers\HtmlExtensions.cs" />
+    <Compile Include="Infrastructure\Helpers\OrderExtensions.cs" />
+    <Compile Include="Infrastructure\Helpers\ProductExtensions.cs" />
+    <Compile Include="Infrastructure\MVC\TailspinController.cs" />
+    <Compile Include="Infrastructure\MVC\TailspinControllerFactory.cs" />
+    <Compile Include="Infrastructure\MVC\TailspinViewEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tailspin.Infrastructure\Tailspin.Infrastructure.csproj">
+      <Project>{8b763229-4582-412c-a12b-1ce70cbae66e}</Project>
+      <Name>Tailspin.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tailspin.Model\Tailspin.Model.csproj">
+      <Project>{4062bcf9-25ec-4023-8501-69f22760bd90}</Project>
+      <Name>Tailspin.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tailspin.SimpleSqlRepository\Tailspin.SimpleSqlRepository.csproj">
+      <Project>{57abe6a3-c2b0-4aa6-9fd2-4ef19743566e}</Project>
+      <Name>Tailspin.SimpleSqlRepository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Template.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\Tailspin.Models\TailspinLayers.layerdiagram">
+      <Link>TailspinLayers.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.9.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dockerfile.windows" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1201</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1178/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

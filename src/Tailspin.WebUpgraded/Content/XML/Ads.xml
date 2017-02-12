@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>/Content/ProductImages/nwt-thumb.jpg</ImageUrl>
+    <NavigateUrl>http://localhost/test.aspx?a=1</NavigateUrl>
+    <AlternateText>ad1</AlternateText>
+  </Ad>
+  <Ad>
+    <ImageUrl>/Content/ProductImages/fcf-thumb.jpg</ImageUrl>
+    <NavigateUrl>http://localhost/test.aspx?a=2&b=1</NavigateUrl>
+    <AlternateText>ad2</AlternateText>
+  </Ad>
+</Advertisements>

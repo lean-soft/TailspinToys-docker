@@ -1,0 +1,196 @@
+﻿<#@ template language="C#" debug="True" hostspecific="True" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data.Common" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#+
+static string connectionString = @"Data Source=localhost;Initial Catalog=TailspinToys;Integrated Security=True";
+static string providerName = "";
+static DbProviderFactory _factory;
+static DbConnection _connection;
+
+void Init() {
+    string connString = connectionString;
+    providerName = "";
+    if (string.IsNullOrEmpty(providerName))
+        providerName = "System.Data.SqlClient";
+    
+    _factory = DbProviderFactories.GetFactory(providerName);
+
+    _connection = _factory.CreateConnection();
+    _connection.ConnectionString = connString;
+    _connection.Open();
+}
+new void Dispose(){
+    _connection.Close();
+    _connection.Dispose();
+
+}
+string CleanName(string rawName){
+    return rawName.Replace(" ","_");
+}
+
+string CreateColumnList(DataTable columns){
+    StringBuilder sb = new StringBuilder();
+    int indexer = 1;
+    foreach (DataRow row in columns.Rows) {
+        sb.Append(QualifyColumn(row));
+        if (indexer < columns.Rows.Count)
+            sb.Append(",");
+        indexer++;
+    }
+    return sb.ToString();
+}
+DataTable GetPrimaryKey(string tableName){
+    string[] restrictions = new string[] {null, null, tableName, "PK_" + tableName };
+    DataTable result = _connection.GetSchema("IndexColumns", restrictions);
+    return result;
+}
+
+DataTable GetTables() {
+    return _connection.GetSchema("Tables");
+}
+DataTable GetColumns(string table) {
+    string[] restrictions = new string[4] {null, null, table, null };
+    return _connection.GetSchema("Columns",restrictions);
+}
+
+DataTable GetIndexColumns(string table) {
+    string[] restrictions = new string[4] { null, null, table, null };
+    return _connection.GetSchema("IndexColumns", restrictions);
+}
+DataTable GetIndexes(string table) {
+    string[] restrictions = new string[4] { null, null, table, null };
+    return _connection.GetSchema("Indexes", restrictions);
+}
+DataTable GetSchema() {
+    return _connection.GetSchema();
+
+}
+
+DataRow GetPK(string tableName) {
+
+    var indexes = GetIndexColumns(tableName);
+    var columns = GetColumns(tableName);
+    DataRow result = null;
+    string pkColumnName = "";
+
+    //SQL Server
+    if (indexes.Columns.IndexOf("KeyType")>0) {
+        foreach (DataRow dr in indexes.Rows) {
+            int keyType = 0;
+            string sKeyType = dr["KeyType"].ToString().Trim();
+            int.TryParse(sKeyType, out keyType);
+            if (keyType == 56 || keyType == 36) {
+                pkColumnName = dr["column_name"].ToString();
+                break;
+            }
+        } 
+    //MySQL
+    }else if(columns.Columns.IndexOf("COLUMN_KEY") > 0) {
+        //this is for MySql
+        //see if columns has PRI
+        foreach (DataRow dr in columns.Rows) {
+            if (dr["COLUMN_KEY"].ToString().Trim() == "PRI") {
+                result = dr;
+                break;
+            }
+        }
+    }
+
+    if (!String.IsNullOrEmpty(pkColumnName)) {
+        foreach (DataRow dr in columns.Rows) {
+            if (dr["column_name"].ToString() == pkColumnName) {
+                result = dr;
+                break;
+            }
+        }
+    }
+
+    return result;
+}
+
+string Parameterize(DataRow dr) {
+    string name = CleanName(dr["column_name"].ToString());
+
+    return string.Format("@{0}",name);
+}
+string QualifyColumn(DataRow dr) {
+    string result = "";
+    string schema = dr["table_schema"].ToString();
+    string table = dr["table_name"].ToString();
+    string name = dr["column_name"].ToString();
+
+    if (providerName == "MySql.Data.MySqlClient") {
+        result = string.Format("'{0}'", name);
+
+    } else {
+        result = string.Format("[{0}].[{1}].[{2}]", schema, table, name);
+
+    }
+    return result;
+}
+
+string QualifyTable(DataRow dr) {
+    string result = "";
+    string schema = dr["table_schema"].ToString();
+    string table = dr["table_name"].ToString();
+
+    if (providerName == "MySql.Data.MySqlClient") {
+        result = string.Format("'{0}'", table);
+
+    } else {
+        result = string.Format("[{0}].[{1}]", schema, table);
+
+    }
+    return result;
+}
+string GetSysType(string sqlType){
+	string sysType="string";
+	switch (sqlType) {
+		case "bigint":
+		case "smallint":
+		case "int":
+			sysType= "int";
+			break;
+		case "uniqueidentifier":
+			sysType=  "Guid";
+			 break;
+		case "smalldatetime":
+		case "datetime":
+			sysType=  "DateTime";
+			  break;
+		case "float":
+			sysType="double";
+			break;
+		case "real":
+		case "numeric":
+		case "smallmoney":
+		case "decimal":
+		case "money":
+			sysType=  "decimal";
+			 break;
+		case "bit":
+			sysType=  "bool";
+			   break;
+		case "image":
+		case "binary":
+		case "tinyint":
+		case "varbinary":
+			sysType=  "byte[]";
+			 break;
+	}
+	return sysType;
+}
+#>

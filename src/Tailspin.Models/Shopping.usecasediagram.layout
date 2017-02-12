@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Shopping">
+  <useCaseModelRootMoniker Id="7284cf85-e1f9-49c4-833e-2b523375bf20" />
+  <nestedChildShapes>
+    <useCaseShape Id="ae0e94aa-139c-47e7-9552-967369f383fc" absoluteBounds="1.125, 0.5, 1.5, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="9dd47a7d-f453-40e5-a0e4-70dbcf0943c7" LastKnownName="View Home Page" />
+    </useCaseShape>
+    <useCaseShape Id="cc358bf2-4605-402d-ac04-4615eb738b93" absoluteBounds="2.125, 1.25, 1.375, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="005e6a56-afd1-420c-8e3c-5cabc1dadc28" LastKnownName="Browse Product Category" />
+    </useCaseShape>
+    <actorShape Id="aced4352-9744-49ec-94af-0f44682f57a0" absoluteBounds="0.5, 1.5, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="d079e640-8817-4e23-b83a-2b27a9629de1" LastKnownName="Shopper" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(1 : 1.52777777777778); (1.61165741880871 : 0.984082294392261)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="bfacc9aa-3b91-4b40-a161-714fab47a5f2" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="aced4352-9744-49ec-94af-0f44682f57a0" />
+        <useCaseShapeMoniker Id="ae0e94aa-139c-47e7-9552-967369f383fc" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(1 : 1.71969696969697); (2.16028023259027 : 1.57905694150421)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="7f2e178d-8da0-49ab-a164-76dffac92c33" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="aced4352-9744-49ec-94af-0f44682f57a0" />
+        <useCaseShapeMoniker Id="cc358bf2-4605-402d-ac04-4615eb738b93" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="8a234c49-63ed-4293-9aa8-9ec5beeb712b" absoluteBounds="2.5, 2, 1.5, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="bdc74d7c-cafd-449b-8b64-7c2543b7c912" LastKnownName="Select product and add to cart" />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1 : 1.8125); (2.57917960675006 : 2.20729490168752)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="561b9a70-2586-478a-bc5b-9f63ed74ac55" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="aced4352-9744-49ec-94af-0f44682f57a0" />
+        <useCaseShapeMoniker Id="8a234c49-63ed-4293-9aa8-9ec5beeb712b" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="821d78db-040d-41ae-9aa4-2eb3c5d9ee84" absoluteBounds="2.375, 2.875, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="6fccfade-9dbd-4b77-b851-14f1f584bf74" LastKnownName="Checkout" />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1 : 1.91176470588235); (2.56927624946212 : 2.92717874965196)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="fd5a3719-39ae-4871-b7ae-a8e21972b9ca" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="aced4352-9744-49ec-94af-0f44682f57a0" />
+        <useCaseShapeMoniker Id="821d78db-040d-41ae-9aa4-2eb3c5d9ee84" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="d43b1b13-9d09-4949-85c3-48fbe0bd01f6" absoluteBounds="4.5, 2.875, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="0704c731-9948-4bce-a305-8dd8664e6163" LastKnownName="Check-in" />
+    </useCaseShape>
+    <includeConnector edgePoints="[(3.375 : 3.125); (4.5 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«include»">
+      <includeMoniker Id="2f3ceca7-e827-4aee-961a-aeaa64f1117a" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="821d78db-040d-41ae-9aa4-2eb3c5d9ee84" />
+        <useCaseShapeMoniker Id="d43b1b13-9d09-4949-85c3-48fbe0bd01f6" />
+      </nodes>
+    </includeConnector>
+    <useCaseShape Id="8097e8ad-519a-487d-8dd5-acc63d1d08f7" absoluteBounds="4.75, 1.25, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="cbed3074-c933-4d32-8ae0-55c223b77804" LastKnownName="Subscribe to a product line" />
+    </useCaseShape>
+    <extendConnector edgePoints="[(4.90513338217892 : 1.76023617233354); (3.85205788596584 : 2.1513784994984)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«extend»">
+      <extendMoniker Id="8ea3b8be-83ff-4bd4-8eb1-fc1f3c852447" />
+      <relativeChildShapes />
+      <nodes>
+        <useCaseShapeMoniker Id="8097e8ad-519a-487d-8dd5-acc63d1d08f7" />
+        <useCaseShapeMoniker Id="8a234c49-63ed-4293-9aa8-9ec5beeb712b" />
+      </nodes>
+    </extendConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

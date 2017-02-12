@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TailspinToys" Class="CatalogDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=VLM13275025;Initial Catalog=TailspinToys;Integrated Security=True" SettingsObjectName="Tailspin.Admin.App.Properties.Settings" SettingsPropertyName="TailspinToysConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="SKU" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DeliveryMethodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BasePrice" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="WeightInPounds" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DateAvailable" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InventoryStatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstimatedDelivery" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AllowBackOrder" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsTaxable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DefaultImageFile" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="AmountOnHand" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AllowPreOrder" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductDescriptor" Member="ProductDescriptors" ThisKey="SKU" OtherKey="SKU" Type="ProductDescriptor" />
+      <Association Name="Product_Products_Related" Member="Products_Relateds" ThisKey="SKU" OtherKey="SKU" Type="Products_Related" />
+      <Association Name="Product_Products_Related1" Member="Products_Relateds1" ThisKey="SKU" OtherKey="RelatedSKU" Type="Products_Related" />
+      <Association Name="DeliveryMethod_Product" Member="DeliveryMethod" ThisKey="DeliveryMethodID" OtherKey="DeliveryMethodID" Type="DeliveryMethod" IsForeignKey="true" />
+      <Association Name="InventoryStatus_Product" Member="InventoryStatus" ThisKey="InventoryStatusID" OtherKey="InventoryStatusID" Type="InventoryStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductDescriptors" Member="ProductDescriptors">
+    <Type Name="ProductDescriptor">
+      <Column Name="DescriptorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SKU" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LanguageCode" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="NVarChar(2500) NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductDescriptor" Member="Product" ThisKey="SKU" OtherKey="SKU" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeliveryMethod" Member="DeliveryMethods">
+    <Type Name="DeliveryMethod">
+      <Column Name="DeliveryMethodID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DeliveryMethod_Product" Member="Products" ThisKey="DeliveryMethodID" OtherKey="DeliveryMethodID" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InventoryStatus" Member="InventoryStatus">
+    <Type Name="InventoryStatus">
+      <Column Name="InventoryStatusID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="InventoryStatus_Product" Member="Products" ThisKey="InventoryStatusID" OtherKey="InventoryStatusID" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products_Related" Member="Products_Relateds">
+    <Type Name="Products_Related">
+      <Column Name="SKU" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RelatedSKU" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Product_Products_Related" Member="Product" ThisKey="SKU" OtherKey="SKU" Type="Product" IsForeignKey="true" />
+      <Association Name="Product_Products_Related1" Member="Product1" ThisKey="RelatedSKU" OtherKey="SKU" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

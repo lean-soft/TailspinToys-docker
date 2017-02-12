@@ -1,0 +1,15 @@
+﻿FROM harbor-bj.devopshub.cn/microsoft/iis
+SHELL ["powershell"]
+
+RUN Install-WindowsFeature Net-Framework-45-ASPNET ; \
+    Install-WindowsFeature Web-Asp-Net45
+
+ARG source=.
+WORKDIR 'c:\app'
+
+RUN Remove-Website -Name 'Default Web Site'
+RUN New-Website -Name 'aspnet45docker' -Port 80 \
+	-PhysicalPath 'c:\app' -ApplicationPool '.NET v4.5'
+
+EXPOSE 80
+COPY $source .

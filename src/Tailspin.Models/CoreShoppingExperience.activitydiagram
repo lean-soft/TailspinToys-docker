@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="9919993d-66bf-49a4-8541-97cdf6e8d770" name="Activity1" linkedPackageId="23b74156-70c3-443a-87b0-4e9b3414b87c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="cc780bb8-a13b-4d35-82fc-18a2a64d379d">
+      <profileInstance Id="f0cc3785-e18a-4bb8-b429-14ad09ed503a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="998a2d45-570f-4f30-af3e-99d8c1f98b14">
+      <profileInstance Id="5177e9ec-a9db-4f8d-ab30-1219d32dece2" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="827fe1b9-99ce-40fc-b251-d1079274242e" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="282b3808-8420-4500-8f7c-348b05639f27" />
+        <nodes>
+          <initialNode Id="e4764071-3dfa-4ec8-8522-5bad8f419841" name="Initial1" isLeaf="false">
+            <elementDefinition Id="76199040-8d71-4565-a9bc-cd499f5f17e2" />
+            <flowNodeTargets>
+              <controlFlow Id="31913b05-8c23-4dec-a9b4-6b0af64d39e8" isLeaf="false">
+                <opaqueActionMoniker Id="66dd71a1-abdf-4c4c-a293-548cccf7d78f" LastKnownName="Home Page" />
+                <elementDefinition Id="6eaf60b2-e2f2-46fc-98b7-e7c1d99b0d54" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="66dd71a1-abdf-4c4c-a293-548cccf7d78f" name="Home Page" isLeaf="false">
+            <elementDefinition Id="05e7d60c-de58-48d0-ab44-d896da3066e2" />
+            <flowNodeTargets>
+              <controlFlow Id="21923841-fd4a-45b2-bbaf-9aa52a09a060" isLeaf="false">
+                <opaqueActionMoniker Id="f457535d-e471-4d87-aac1-609da3238acf" LastKnownName="Select plane from New Planes list" />
+                <elementDefinition Id="3805f8e9-c4cb-4ca4-b946-09339b0ef03b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f457535d-e471-4d87-aac1-609da3238acf" name="Select plane from New Planes list" isLeaf="false">
+            <elementDefinition Id="9f867250-d0d9-4876-be20-8de4e0018391" />
+            <flowNodeTargets>
+              <controlFlow Id="9f72a29a-4ab2-4e0d-9300-1e7ed26486a8" isLeaf="false">
+                <opaqueActionMoniker Id="7dd7495b-b76b-4575-83dc-7339e41bc81f" LastKnownName="Add item to the cart" />
+                <elementDefinition Id="40b1694a-19d5-42ba-8509-2ccd49eafb66" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7dd7495b-b76b-4575-83dc-7339e41bc81f" name="Add item to the cart" isLeaf="false">
+            <elementDefinition Id="81ad8ae3-31c8-4500-a020-391a9429c38f" />
+            <flowNodeTargets>
+              <controlFlow Id="7d4659f6-7aae-4a1e-8daa-01b071c7f164" isLeaf="false">
+                <opaqueActionMoniker Id="f05ddf3e-c3fa-4808-9160-678eb15cf8c6" LastKnownName="Checkout" />
+                <elementDefinition Id="307f32c0-5124-4222-a532-3019d792ece9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f05ddf3e-c3fa-4808-9160-678eb15cf8c6" name="Checkout" isLeaf="false">
+            <elementDefinition Id="e59f4c76-379e-4c06-a4a2-7f16d080b75b" />
+            <flowNodeTargets>
+              <controlFlow Id="a970ba88-4dc1-4395-a49e-819e80b790ce" isLeaf="false">
+                <decisionNodeMoniker Id="31779227-3168-46b3-a2ab-7d2dccf17ff6" LastKnownName="Decision1" />
+                <elementDefinition Id="eaa28e5d-1c1d-4193-95ff-bc851833494e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="31779227-3168-46b3-a2ab-7d2dccf17ff6" name="Decision1" isLeaf="false">
+            <description>Login</description>
+            <elementDefinition Id="5945e5d7-a985-4711-8e60-6b4aaecbf52b" />
+            <flowNodeTargets>
+              <controlFlow Id="7c3d82bd-f920-4ffb-8d4a-8e32d40852ff" guard="Anonymous" isLeaf="false">
+                <opaqueActionMoniker Id="5d2f2071-003f-403f-b959-b6e14d14b99e" LastKnownName="Enter address" />
+                <elementDefinition Id="926c41cc-433d-4935-8c15-3effeeb89a14" />
+              </controlFlow>
+              <controlFlow Id="9a6952c2-d730-4afc-840a-714987591948" guard="Login" isLeaf="false">
+                <mergeNodeMoniker Id="603ad5b0-f752-4855-8a33-f0dcd78471ed" LastKnownName="Merge1" />
+                <elementDefinition Id="f148bd66-7285-4bb6-b096-bb30d8ffd8af" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="5d2f2071-003f-403f-b959-b6e14d14b99e" name="Enter address" isLeaf="false">
+            <elementDefinition Id="c2bb6045-f3ca-47cb-afbe-83c6b0c77837" />
+            <flowNodeTargets>
+              <controlFlow Id="f036749d-70e0-4eaf-8c34-1eed9bf48d27" isLeaf="false">
+                <mergeNodeMoniker Id="603ad5b0-f752-4855-8a33-f0dcd78471ed" LastKnownName="Merge1" />
+                <elementDefinition Id="7dca9c0c-46c2-4f55-9fe5-0230f4e3d2ef" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="63d41d80-3330-4243-bc6a-52b1a0056b6b" name="Choosing shipping method" isLeaf="false">
+            <elementDefinition Id="f88b6db5-7b8d-4380-bb21-7fae7291362d" />
+            <flowNodeTargets>
+              <controlFlow Id="7f21aed0-e2b5-49c3-9879-402e74c1af40" isLeaf="false">
+                <opaqueActionMoniker Id="b5e799d6-fa19-40b1-957c-67317d14f73f" LastKnownName="Place order" />
+                <elementDefinition Id="e952f191-1e0b-49e3-b2ca-16d36c8a830a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b5e799d6-fa19-40b1-957c-67317d14f73f" name="Place order" isLeaf="false">
+            <elementDefinition Id="f0507db5-7bcb-447c-a07c-37f769f78e36" />
+            <flowNodeTargets>
+              <controlFlow Id="36b1ef53-dcc8-46e8-a6e4-6684e110dec8" isLeaf="false">
+                <opaqueActionMoniker Id="ae8656b6-7afb-49c0-aaa1-49a173a19edf" LastKnownName="Confirmation" />
+                <elementDefinition Id="c96243f3-590c-4b02-81d2-6d3506200f15" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="d3a9f022-90fc-4997-a2b9-b86f9486a2cb" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="922c9eee-694f-48c5-8267-f5d10a6020a5" />
+          </activityFinalNode>
+          <opaqueAction Id="ae8656b6-7afb-49c0-aaa1-49a173a19edf" name="Confirmation" isLeaf="false">
+            <elementDefinition Id="ca921162-43d7-4ca9-a17e-eba94bed7442" />
+            <flowNodeTargets>
+              <controlFlow Id="b9df9f6a-75b2-4404-b6e4-9ae6cd555caf" isLeaf="false">
+                <activityFinalNodeMoniker Id="d3a9f022-90fc-4997-a2b9-b86f9486a2cb" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="baba51dc-308f-435a-b629-101c4c92369e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="603ad5b0-f752-4855-8a33-f0dcd78471ed" name="Merge1" isLeaf="false">
+            <elementDefinition Id="db019cf9-5097-48a5-bfa7-8159e3cddad6" />
+            <flowNodeTargets>
+              <controlFlow Id="ed6750c2-76a5-4336-8e2e-af4e2b9166ee" isLeaf="false">
+                <opaqueActionMoniker Id="63d41d80-3330-4243-bc6a-52b1a0056b6b" LastKnownName="Choosing shipping method" />
+                <elementDefinition Id="8b50a441-d7d4-4baf-8507-1d14e6e40464" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="23b74156-70c3-443a-87b0-4e9b3414b87c" name="Tailspin.Models">
+    <elementDefinition Id="71722790-c434-4bf8-b875-e75b96b755ea" />
+  </package>
+</activityRootModel>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3177b8e4-903b-4c14-b481-63b73ffa5466}</ProjectGuid>
+    <Name>Tailspin.Models</Name>
+    <RootNamespace>Tailspin.Models</RootNamespace>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="false" />
+  <ItemGroup>
+    <Content Include="LogicalDomain.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LogicalDomain.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>LogicalDomain.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Shopping.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Shopping.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Shopping.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="CoreShoppingExperience.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CoreShoppingExperience.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>CoreShoppingExperience.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="BigPicture.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="BigPicture.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>BigPicture.componentdiagram</DependentUpon>
+    </Content>
+    <Validate Include="TailspinLayers.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>TailspinLayers.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="TailspinLayers.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>TailspinLayers.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="TailspinLayers.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\Tailspin.Models.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tailspin.Infrastructure\Tailspin.Infrastructure.csproj">
+      <Name>Tailspin.Infrastructure</Name>
+      <Project>{8b763229-4582-412c-a12b-1ce70cbae66e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tailspin.Model\Tailspin.Model.csproj">
+      <Name>Tailspin.Model</Name>
+      <Project>{4062bcf9-25ec-4023-8501-69f22760bd90}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tailspin.SimpleSqlRepository\Tailspin.SimpleSqlRepository.csproj">
+      <Name>Tailspin.SimpleSqlRepository</Name>
+      <Project>{57abe6a3-c2b0-4aa6-9fd2-4ef19743566e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tailspin.WebUpgraded\Tailspin.Web.csproj">
+      <Name>Tailspin.Web</Name>
+      <Project>{58610f2b-d2aa-4c77-85f2-4304f5d4ff12}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

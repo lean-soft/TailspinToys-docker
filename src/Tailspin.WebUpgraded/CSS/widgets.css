@@ -1,0 +1,50 @@
+/* STYLESHEET SECTIONS
+   CSS Flags marked with [=]
+	 
+	 WIDGETS STYLES
+	 ---PLEASE ADD YOUR OWN SECTIONS--
+	 PAGINATION STYLES
+	 
+	 ....................................... */
+
+/* =WIDGETS STYLES
+   ....................................... */
+
+
+/* =PAGINATION STYLES (default styles can be changed)
+   ....................................... */
+div.paginationDiv {
+	margin: 15px auto 0;
+	width: 250px;
+	text-align: center;
+}
+div.paginationDiv a,
+div.paginationDiv span {
+	text-decoration: none;
+	padding: 0;
+	margin: 0 1px 0 0;
+	height: 16px;
+	width: 16px;
+	text-align: center;
+	display: block;
+	float: left;
+	color: #fff;
+	font-weight: bold;
+}
+div.paginationDiv span.selectedPage {
+	background: url(../Images/bg_activePaging.gif) no-repeat top left;
+	color: #fff;
+}
+div.paginationDiv a:hover {
+	text-decoration: underline;
+}
+div.paginationDiv a.previousLink {
+	padding: 0 4px 0 9px;
+	background: url(../Images/leftArrow.gif) no-repeat 0px 4px;
+	width: 82px;
+}
+div.paginationDiv a.nextLink {
+	padding: 0 9px 0 4px;
+	background: url(../Images/rightArrow.gif) no-repeat 100% 4px;
+	width: 56px;
+}

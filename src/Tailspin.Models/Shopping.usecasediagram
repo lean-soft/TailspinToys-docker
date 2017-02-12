@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7284cf85-e1f9-49c4-833e-2b523375bf20" name="Shopping" linkedPackageId="a2b0e004-59fa-436a-a1b6-839ca10deb50" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="5691daf7-53f8-46f8-8c31-c04cf91cbe70">
+      <profileInstance Id="12acaba2-53e9-4257-8b92-456c0cca4d78" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fe753b1e-8f17-4338-99bc-30f4ef72a659">
+      <profileInstance Id="3f2204b4-b7ca-4883-ad73-21ec4e13ee8b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9dd47a7d-f453-40e5-a0e4-70dbcf0943c7" name="View Home Page" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="95217218-b168-41b8-85fe-badf794f79fd" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="005e6a56-afd1-420c-8e3c-5cabc1dadc28" name="Browse Product Category" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3e88b215-5e8f-4acb-bcc6-5ec957f4bd42" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="d079e640-8817-4e23-b83a-2b27a9629de1" name="Shopper" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1501802d-a1b0-4aea-adc1-9a16406a4225" />
+        <targetEnds>
+          <association Id="bfacc9aa-3b91-4b40-a161-714fab47a5f2" isDerived="false" sourceEndRoleName="Shopper" targetEndRoleName="View Home Page" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9dd47a7d-f453-40e5-a0e4-70dbcf0943c7" LastKnownName="View Home Page" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="39d65b0a-b3ed-43f6-93b7-e5e6b6c19c0b" name="Shopper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e97cabd1-9a08-47ff-9647-b66d5f388076" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="331a32fc-6fcf-4c56-916b-266540d60205" name="View Home Page" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4e461fb1-b550-4c42-9286-96a1db145785" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5848a62b-3567-45e6-a90a-0970eb445e6c" />
+          </association>
+          <association Id="7f2e178d-8da0-49ab-a164-76dffac92c33" isDerived="false" sourceEndRoleName="Shopper" targetEndRoleName="Browse Product Category" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="005e6a56-afd1-420c-8e3c-5cabc1dadc28" LastKnownName="Browse Product Category" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="638cf391-4ef4-4918-a6d2-6be2b20b3033" name="Shopper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6c57f2eb-c0fa-4d50-bfd8-824f6cbbbd55" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="673726cf-6b08-48e0-b0ee-f37b13631521" name="Browse Product Category" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="27c8a6f1-693f-4a32-9a9c-72ddc7a8f598" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5d32f86b-5cad-46df-8acb-c5d3a8e0cae9" />
+          </association>
+          <association Id="561b9a70-2586-478a-bc5b-9f63ed74ac55" isDerived="false" sourceEndRoleName="Shopper" targetEndRoleName="Select product and add to cart" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bdc74d7c-cafd-449b-8b64-7c2543b7c912" LastKnownName="Select product and add to cart" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="90b67dc6-3413-4f6d-99a4-4b330e3028eb" name="Shopper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a8ff1d76-29d9-47ec-90a8-e202ded0a734" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e7b70958-4503-4cd5-865c-7071a08fb2ab" name="Select product and add to cart" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0a82a95c-0d20-44b5-9ec9-a405c620f785" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9b5c6eec-893b-4d52-bb30-a82da24907da" />
+          </association>
+          <association Id="fd5a3719-39ae-4871-b7ae-a8e21972b9ca" isDerived="false" sourceEndRoleName="Shopper" targetEndRoleName="Checkout" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6fccfade-9dbd-4b77-b851-14f1f584bf74" LastKnownName="Checkout" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="47a675e2-24b3-440b-a82b-12b138eecb03" name="Shopper" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="49c86caa-739e-41d4-9733-da210517b43f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="75a19d60-8b3f-4831-9e05-0469b7b62833" name="Checkout" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e8572fab-88bd-468f-9e64-6ae7b954eade" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="076b026d-ff9c-4a77-a993-436fd6b2141c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bdc74d7c-cafd-449b-8b64-7c2543b7c912" name="Select product and add to cart" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e636a04b-e7c4-4156-b3e2-fa56299307b1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6fccfade-9dbd-4b77-b851-14f1f584bf74" name="Checkout" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fc0f1c6d-ffc8-4ced-bab5-8c3bc5b2b939" />
+        <additions>
+          <include Id="2f3ceca7-e827-4aee-961a-aeaa64f1117a">
+            <useCaseMoniker Id="0704c731-9948-4bce-a305-8dd8664e6163" LastKnownName="Check-in" />
+            <elementDefinition Id="fad25e67-4d87-433e-b148-bc05b0330144" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0704c731-9948-4bce-a305-8dd8664e6163" name="Check-in" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ae59fd24-478c-43e9-afa5-966f11d7a564" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="cbed3074-c933-4d32-8ae0-55c223b77804" name="Subscribe to a product line" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2d0e2511-775c-4e66-b382-e415cd389388" />
+        <extendedCases>
+          <extend Id="8ea3b8be-83ff-4bd4-8eb1-fc1f3c852447">
+            <useCaseMoniker Id="bdc74d7c-cafd-449b-8b64-7c2543b7c912" LastKnownName="Select product and add to cart" />
+            <elementDefinition Id="90aa7984-d3fc-4689-953b-224598daaa4e" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="a2b0e004-59fa-436a-a1b6-839ca10deb50" name="Tailspin.Models">
+    <elementDefinition Id="71722790-c434-4bf8-b875-e75b96b755ea" />
+  </package>
+</useCaseModelRoot>
