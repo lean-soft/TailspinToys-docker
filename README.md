@@ -4,6 +4,9 @@
 
 ![alt text](./images/d4d7-docker-run.png)
 
+请安装ASP.NET MVC 2才能编译此项目
+![](https://www.microsoft.com/en-us/download/details.aspx?id=22079)
+
 具体操作方式可以参考以下博客链接
 
 [Docker4Dev #7 新瓶装老酒 – 使用 Windows Container运行ASP.NET MVC 2 + SQLExpress 应用](http://devopshub.cn/2017/02/12/d4d-7-windows-container-aspnet-mvc2-sqlexpress/)
