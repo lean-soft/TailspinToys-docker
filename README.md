@@ -5,7 +5,7 @@
 ![alt text](./images/d4d7-docker-run.png)
 
 请安装ASP.NET MVC 2才能编译此项目
-![](https://www.microsoft.com/en-us/download/details.aspx?id=22079)
+https://www.microsoft.com/en-us/download/details.aspx?id=22079
 
 具体操作方式可以参考以下博客链接
 
